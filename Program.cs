@@ -10,19 +10,19 @@
 
         public static int MestFrekventSiffra(int[] arrayOfNumbers)
         {
-            var nummerLagringsDictionary = new Dictionary<int, int>();
+            var numberStoringDictionary = new Dictionary<int, int>();
             foreach (var number in arrayOfNumbers)
             {
-                if (nummerLagringsDictionary.ContainsKey(number))
+                if (numberStoringDictionary.ContainsKey(number))
                 {
-                    nummerLagringsDictionary[number]++;
+                    numberStoringDictionary[number]++;
                 }
                 else
                 {
-                    nummerLagringsDictionary.Add(number, 1);
+                    numberStoringDictionary.Add(number, 1);
                 }
             }
-            return nummerLagringsDictionary.OrderByDescending(par => par.Value).ThenBy(par => par.Key).First().Key;
+            return numberStoringDictionary.OrderByDescending(par => par.Value).ThenBy(par => par.Key).First().Key;
         }
     }
 }
